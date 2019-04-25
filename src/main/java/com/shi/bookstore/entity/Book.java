@@ -1,5 +1,4 @@
-package com.shi.bookstore.domain;
-
+package com.shi.bookstore.entity;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -10,22 +9,25 @@ import javax.persistence.*;
 
 /**
  * @auther shiTu
- * @date 2019/4/22 11:16
+ * @date 2019/4/22 15:32
  */
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @ApiModel
-@Table(name = "tb_manager")
-public class manager {
+@Table(name = "tb_book")
+public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @ApiModelProperty("管理员ID")
+    @ApiModelProperty("图书Id")
     private Long id;
 
-    @ApiModelProperty("用户名")
-    private String name;
+    @ApiModelProperty("图书名")
+    private String bookName;
 
-    @ApiModelProperty("密码")
-    private String password;
+    @ApiModelProperty("图书简介")
+    private String introduce;
+
+
+
 }

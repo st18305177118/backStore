@@ -9,6 +9,6 @@ spring:
       ddl-auto: update
     show-sql: true
 server:
-  port: 8000
+  port: 8888
   servlet:
     context-path: /shi

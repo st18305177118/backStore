@@ -1,4 +1,4 @@
-package com.shi.bookstore.domain;
+package com.shi.bookstore.entity;
 
 import io.swagger.annotations.ApiModelProperty;
 
@@ -10,7 +10,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "tb_user")
-public class user {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty("用户ID")
