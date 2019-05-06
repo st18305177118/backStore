@@ -20,9 +20,6 @@ public class ManagerServiceImplTest {
     public void saveManager() {
     }
 
-    @Test
-    public void checkLogin() {
-    }
 
 
     @Test
@@ -30,4 +27,15 @@ public class ManagerServiceImplTest {
         List<Manager> list = managerRepository.findAll();
         System.out.println(list);
     }
+
+    @Test
+    public void checkLogin(){
+        Manager manager = new Manager();
+        manager.setName("shi");
+        manager.setPassword("passwordasd");
+        manager = managerRepository.findByPasswordAndName(manager.getName(),manager.getPassword());
+        System.out.println(manager);
+
+    }
+
 }

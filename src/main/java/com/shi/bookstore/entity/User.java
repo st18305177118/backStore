@@ -14,23 +14,30 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty("用户ID")
+    @Column(name = "id")
     private Long Id;
 
+    @Column(name = "username")
     @ApiModelProperty("用户名")
     private String username;
 
+    @Column(name = "password")
     @ApiModelProperty("密码")
     private String password;
 
+    @Column(name = "trueName")
     @ApiModelProperty("trueName")
     private String trueName;
 
+    @Column(name = "address")
     @ApiModelProperty("address")
     private String address;
 
+    @Column(name = "Img")
     @ApiModelProperty("Img用户头像")
     private String Img;
 
+    @Column(name = "balance")
     @ApiModelProperty("用户余额")
     private String balance;
 

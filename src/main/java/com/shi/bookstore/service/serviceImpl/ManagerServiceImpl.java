@@ -17,15 +17,14 @@ public class ManagerServiceImpl implements ManagerService {
     @Autowired
     private ManagerRepository managerRepository;
 
-
     @Override
     public Manager saveManager(Manager manager) {
         return managerRepository.save(manager);
     }
 
     @Override
-    public Manager checkLogin(String name, String password) {
-        return managerRepository.getByPasswordAndName(name,password);
+    public Manager Login(Manager manager) {
+        return managerRepository.findByPasswordAndName(manager.getName(),manager.getPassword());
     }
 
     @Override

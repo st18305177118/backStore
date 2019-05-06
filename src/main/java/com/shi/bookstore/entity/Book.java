@@ -28,6 +28,13 @@ public class Book {
     @ApiModelProperty("图书简介")
     private String introduce;
 
+    @ApiModelProperty("原价")
+    private String price;
 
+    @ApiModelProperty("现价")
+    private String nowPrice;
+
+    @ApiModelProperty("作者")
+    private String author;
 
 }

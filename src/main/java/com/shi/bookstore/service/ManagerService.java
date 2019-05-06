@@ -14,7 +14,7 @@ public interface ManagerService {
     /*注册*/
     Manager saveManager(Manager manager);
     /*登录*/
-    Manager checkLogin(String name,String password);
+    Manager Login(Manager manager);
     /*全部信息*/
     List<Manager>findAll();
 
