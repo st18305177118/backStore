@@ -23,6 +23,11 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
+    public Manager checkExist(Manager manager) {
+        return managerRepository.findByName(manager.getName());
+    }
+
+    @Override
     public Manager Login(Manager manager) {
         return managerRepository.findByPasswordAndName(manager.getName(),manager.getPassword());
     }

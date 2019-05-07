@@ -13,6 +13,8 @@ import java.util.List;
 public interface ManagerService {
     /*注册*/
     Manager saveManager(Manager manager);
+    /*判断用户是否已经存在*/
+    Manager checkExist (Manager manager);
     /*登录*/
     Manager Login(Manager manager);
     /*全部信息*/

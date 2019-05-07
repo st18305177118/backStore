@@ -37,16 +37,16 @@ public class ManagerController {
 //        return generator.getFailResult("用户名/密码错误");
 //    }
     @PostMapping("/login")
-    public Manager login(@RequestBody Manager manager){
+    public Boolean login(@RequestBody Manager manager){
         if (managerService.Login(manager)!=null){
             System.out.println("登录成功！");
-            return managerService.Login(manager);
+            managerService.Login(manager);
+            return true;
         }else {
             System.out.println("登录失败！");
-            return managerService.Login(manager);
+            managerService.Login(manager);
+            return false;
         }
-//        return managerService.Login(manager);
-
     }
 
     @GetMapping("/list")
@@ -55,11 +55,14 @@ public class ManagerController {
     }
     /*添加*/
     @PutMapping("/addManager")
-    public String addManager(@RequestBody Manager manager){
-        if(managerService.Login(manager)!=null){
-            return "添加失败";
+    public Boolean addManager(@RequestBody Manager manager){
+        if(managerService.checkExist(manager)!=null){
+            System.out.println("添加失败！");
+            return false;
         }else {
-            return "添加成功"+managerService.saveManager(manager);
+            managerService.saveManager(manager);
+            System.out.println("添加成功！");
+            return true;
         }
     }
 //    @PostMapping("/addManager")

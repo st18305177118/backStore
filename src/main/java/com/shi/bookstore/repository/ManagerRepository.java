@@ -12,7 +12,9 @@ public interface ManagerRepository extends JpaRepository<Manager,Long> {
       /*登录*/
       @Query("select manager from Manager manager where manager.name=?1 and manager.password=?2")
       Manager findByPasswordAndName(String name,String password);
-      /*注册*/
+      /*注册,判断是否已经注册*/
+      @Query("select manager from Manager manager where manager.name=?1")
+      Manager findByName(String name);
 //      @Query("select manager from Manager manager where manager.name=?1 and manager.password=?2")
 //      Manager findByName(String name);
 }

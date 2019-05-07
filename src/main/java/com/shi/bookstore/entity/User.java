@@ -26,11 +26,11 @@ public class User {
     private String password;
 
     @Column(name = "trueName")
-    @ApiModelProperty("trueName")
+    @ApiModelProperty("真实姓名")
     private String trueName;
 
     @Column(name = "address")
-    @ApiModelProperty("address")
+    @ApiModelProperty("地址")
     private String address;
 
     @Column(name = "Img")
@@ -39,8 +39,11 @@ public class User {
 
     @Column(name = "balance")
     @ApiModelProperty("用户余额")
-    private String balance;
+    private float balance;
 
+    @Column(name = "phone")
+    @ApiModelProperty("手机号")
+    private String phone;
 
     public Long getId() {
         return Id;
@@ -90,11 +93,19 @@ public class User {
         Img = img;
     }
 
-    public String getBalance() {
+    public float getBalance() {
         return balance;
     }
 
-    public void setBalance(String balance) {
+    public void setBalance(float balance) {
         this.balance = balance;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
