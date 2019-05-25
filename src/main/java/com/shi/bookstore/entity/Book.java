@@ -37,4 +37,13 @@ public class Book {
     @ApiModelProperty("作者")
     private String author;
 
+    @ApiModelProperty("图书封面")
+    private String picture;
+
+    @ApiModelProperty("图书小类")
+    private String smaType;
+
+    @ApiModelProperty("图书大类")
+    private String bigType;
+
 }

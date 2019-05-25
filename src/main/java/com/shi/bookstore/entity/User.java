@@ -37,9 +37,9 @@ public class User {
     @ApiModelProperty("Img用户头像")
     private String Img;
 
-    @Column(name = "balance")
-    @ApiModelProperty("用户余额")
-    private float balance;
+//    @Column(name = "balance")
+//    @ApiModelProperty("用户余额")
+//    private double balance;
 
     @Column(name = "phone")
     @ApiModelProperty("手机号")
@@ -93,13 +93,13 @@ public class User {
         Img = img;
     }
 
-    public float getBalance() {
-        return balance;
-    }
+//    public double getBalance() {
+//        return balance;
+//    }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
-    }
+//    public void setBalance(double balance) {
+//        this.balance = balance;
+//    }
 
     public String getPhone() {
         return phone;
