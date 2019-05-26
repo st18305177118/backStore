@@ -19,5 +19,4 @@ public interface ManagerService {
     Manager Login(Manager manager);
     /*全部信息*/
     List<Manager>findAll();
-
 }
