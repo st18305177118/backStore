@@ -38,4 +38,9 @@ public class UserController {
             return true;
         }
     }
+    /*根据用户名进行查找信息*/
+    @PostMapping("/findUser")
+    public User findUser(@RequestBody User user){
+        return userService.checkExist(user);
+    }
 }

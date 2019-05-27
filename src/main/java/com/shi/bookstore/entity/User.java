@@ -1,6 +1,10 @@
 package com.shi.bookstore.entity;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +13,10 @@ import javax.persistence.*;
  * @date 2019/4/22 13:47
  */
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@ApiModel
 @Table(name = "tb_user")
 public class User {
     @Id
@@ -33,13 +41,9 @@ public class User {
     @ApiModelProperty("地址")
     private String address;
 
-    @Column(name = "Img")
-    @ApiModelProperty("Img用户头像")
-    private String Img;
-
-//    @Column(name = "balance")
-//    @ApiModelProperty("用户余额")
-//    private double balance;
+    @Column(name = "balance")
+    @ApiModelProperty("用户余额")
+    private double balance;
 
     @Column(name = "phone")
     @ApiModelProperty("手机号")
@@ -85,27 +89,19 @@ public class User {
         this.address = address;
     }
 
-    public String getImg() {
-        return Img;
-    }
-
-    public void setImg(String img) {
-        Img = img;
-    }
-
-//    public double getBalance() {
-//        return balance;
-//    }
-
-//    public void setBalance(double balance) {
-//        this.balance = balance;
-//    }
-
     public String getPhone() {
         return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
