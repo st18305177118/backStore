@@ -20,7 +20,9 @@ public interface OrderService {
     /*编辑订单*/
     Order updateOrder(Order order);
     /*根据ID查找订单*/
-    List<Order> findOrderByID(long id);
+    Order findOrderByID(long id);
     /*根据真实姓名模糊查询*/
     List<Order> findOrderLike(Order order);
+    /*根据真实姓名查询*/
+    List<Order> findOrderByName(Order order);
 }

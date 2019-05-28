@@ -24,5 +24,21 @@ public class BookController {
         return list;
     }
 
+    /*删除书籍*/
+    @DeleteMapping("/deleteBook/{id}")
+    public void deleteBook(@PathVariable long id){
+        bookService.deleteBook(id);
+    }
 
+    /*显示所有*/
+    @GetMapping("/getBookList")
+    public List<Book> findBookList(){
+        return bookService.findAllBook();
+    }
+
+    /*修改*/
+    @PostMapping("/updateBook")
+    public Book updateBook(@RequestBody Book book){
+        return bookService.updateBook(book);
+    }
 }

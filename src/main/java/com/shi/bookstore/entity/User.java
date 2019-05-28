@@ -23,7 +23,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @ApiModelProperty("用户ID")
     @Column(name = "id")
-    private Long Id;
+    private Long id;
 
     @Column(name = "username")
     @ApiModelProperty("用户名")
@@ -49,13 +49,6 @@ public class User {
     @ApiModelProperty("手机号")
     private String phone;
 
-    public Long getId() {
-        return Id;
-    }
-
-    public void setId(Long id) {
-        Id = id;
-    }
 
     public String getUsername() {
         return username;
@@ -103,5 +96,13 @@ public class User {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

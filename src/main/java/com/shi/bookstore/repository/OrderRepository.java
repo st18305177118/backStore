@@ -16,4 +16,7 @@ public interface OrderRepository extends JpaRepository<Order, Long> {
     List<Order> findOrderLike(String name);
     @Query("select order from Order order where order.id = ?1")
     List<Order> findOrderByID(String id);
+    /*根据收货人查找订单*/
+    @Query("select order from Order order where order.name = ?1")
+    List<Order> findOrderByName(String name);
 }

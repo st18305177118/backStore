@@ -38,8 +38,8 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> findOrderByID(long id) {
-        return null;
+    public Order findOrderByID(long id) {
+        return orderRepository.getOne(id);
     }
 
 //    @Override
@@ -51,6 +51,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> findOrderLike(Order order) {
         return orderRepository.findOrderLike(order.getName());
+    }
+
+    @Override
+    public List<Order> findOrderByName(Order order) {
+        return orderRepository.findOrderByName(order.getName());
     }
 
 }

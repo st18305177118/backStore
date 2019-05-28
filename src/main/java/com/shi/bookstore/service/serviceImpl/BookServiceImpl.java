@@ -20,4 +20,19 @@ public class BookServiceImpl implements BookService {
     public List<Book> findLikeBookNameAndAuthor(Book book) {
         return bookRepository.findLikeAuthorAndbookName(book.getBookName());
     }
+
+    @Override
+    public void deleteBook(long id) {
+        bookRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Book> findAllBook() {
+        return bookRepository.findAll();
+    }
+
+    @Override
+    public Book updateBook(Book book) {
+        return bookRepository.save(book);
+    }
 }

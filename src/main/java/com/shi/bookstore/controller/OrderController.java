@@ -31,19 +31,30 @@ public class OrderController {
     }
 
     @DeleteMapping("/deleteOrder/{id}")
-    public void deleteShop(@PathVariable long id){
+    public void deleteOrder(@PathVariable long id){
         orderService.deleteOrder(id);
     }
 
     @GetMapping("/findOrderByID/{id}")
-    public void findOrderByID(@PathVariable long id){
-        orderService.findOrderByID(id);
+    public Order findOrderByID(@PathVariable long id){
+       return orderService.findOrderByID(id);
     }
-
-
     /*更新*/
-    @PostMapping("/updateShop")
+    @PostMapping("/updateOrder")
     public Order updateOrder(@RequestBody Order order){
         return orderService.updateOrder(order);
+    }
+
+    /*根据收货人查找*/
+    @PostMapping("/findOrderByName")
+    public List<Order> findOrderByName(@RequestBody Order order){
+        List list = orderService.findOrderByName(order);
+        return list;
+    }
+    /*根据收货人查找*/
+    @PostMapping("/findLikeName")
+    public List<Order> findLikeName(@RequestBody Order order){
+        List list = orderService.findOrderLike(order);
+        return list;
     }
 }

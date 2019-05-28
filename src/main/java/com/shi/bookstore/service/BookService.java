@@ -13,4 +13,10 @@ import java.util.List;
 public interface BookService {
     /*模糊查询到的信息*/
     List<Book> findLikeBookNameAndAuthor(Book book);
+    /*删除书籍*/
+    void deleteBook(long id);
+    /*显示全部书籍*/
+    List<Book> findAllBook();
+    /*更新书籍*/
+    Book updateBook(Book book);
 }
